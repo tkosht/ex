@@ -5,7 +5,7 @@ class Ex:
     def __init__(self, msg):
         self.msg = msg
     def hello(self):
-        return "hello and {}".format(msg)
+        return "hello and {}".format(self.msg)
     def get_msg(self):
         return self.msg
 
