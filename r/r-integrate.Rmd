@@ -1,0 +1,54 @@
+---
+title: "**R Notebook for R Beyesian**"
+output: html_notebook
+---
+
+
+## **plot $f(p) = p^2(1-p)^8dp$ by R.**
+
+```{r}
+f <- function(p){return( p^2*(1-p)^8 )}
+curve(f, 0, 1, xname="p")
+```
+
+## **plot by using ggplot2.**
+
+```{r}
+library(ggplot2)
+ggplot(data.frame(p=c(0, 1)), aes(p)) + labs(y="f(p)") + stat_function(fun=f)
+```
+
+## **calculate $\int_{0}^{1}f(p)dp$ by R.**
+
+```{r}
+P <- integrate(f, 0, 1)     # like probability distribution.
+P
+```
+```{r}
+str(P)
+```
+
+## **The beta distribution**
+
+### **$dbeta(\alpha, \beta) =p^{\alpha-1}(1-p)^{\beta-1}$**
+
+```{r}
+alpha <- 2 + 1          # alpha == 3
+beta <- (10 - 2) + 1    # beta == 9
+
+f <- function(x){dbeta(x, alpha, beta)}
+curve(f, 0, 1)
+```
+
+
+
+```{r}
+P1 <-  1 - integrate(f, 0, 0.5)$value
+P2 <- 1 - pbeta(0.5, 3, 9)
+result <- list(P1, P2,  P1 == P2)
+names(result) <- c("P1", "P2", "P1 == P2")
+result
+
+```
+
+
