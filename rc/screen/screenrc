@@ -33,18 +33,18 @@ bind ^l eval 'focus right' 'command'
 
 bind V split -v
 
-bind r command -c resizev
-bind -c resizev + eval 'resize -v +1' 'command -c resizev'
-bind -c resizev - eval 'resize -v -1' 'command -c resizev'
-bind R command -c resizeh
-bind -c resizeh + eval 'resize -h +1' 'command -c resizeh'
-bind -c resizeh - eval 'resize -h -1' 'command -c resizeh'
+bind r command -c resize_window
+bind -c resize_window + eval 'resize -v +1' 'command -c resize_window'
+bind -c resize_window - eval 'resize -v -1' 'command -c resize_window'
+bind -c resize_window > eval 'resize -h +1' 'command -c resize_window'
+bind -c resize_window < eval 'resize -h -1' 'command -c resize_window'
+bind -c resize_window | eval 'resize -h =' 'command -c resize_window'
+bind -c resize_window = eval 'resize -v =' 'command -c resize_window'
 
 bind w windowlist -b
+
 defscrollback 1000000
 markkeys h=^B:l=^F:$=^E:^U=^Z:^D=^V
-
-#shelltitle '$ |shell'
 
 # message display time
 msgwait 3
