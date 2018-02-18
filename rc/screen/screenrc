@@ -1,0 +1,58 @@
+# screenrc
+defencoding utf-8
+escape 
+#zombie kr
+
+hardstatus on
+defbce on
+
+# Protection from attacks
+multiuser off
+idle off
+
+vbell off
+autodetach on
+startup_message off
+deflogin off
+autonuke on
+defscrollback 0
+
+# set $TERM env
+term screen
+
+bind 'K' kill # kill current screen
+
+bind j  eval 'focus down' 'command'
+bind ^j eval 'focus down' 'command'
+bind k  eval 'focus up' 'command'
+bind ^k eval 'focus up' 'command'
+bind h  eval 'focus left' 'command'
+bind ^h eval 'focus left' 'command'
+bind l  eval 'focus right' 'command'
+bind ^l eval 'focus right' 'command'
+
+bind V split -v
+
+bind r command -c resizev
+bind -c resizev + eval 'resize -v +1' 'command -c resizev'
+bind -c resizev - eval 'resize -v -1' 'command -c resizev'
+bind R command -c resizeh
+bind -c resizeh + eval 'resize -h +1' 'command -c resizeh'
+bind -c resizeh - eval 'resize -h -1' 'command -c resizeh'
+
+bind w windowlist -b
+defscrollback 1000000
+markkeys h=^B:l=^F:$=^E:^U=^Z:^D=^V
+
+#shelltitle '$ |shell'
+
+# message display time
+msgwait 3
+msgminwait 2
+
+# display status
+hardstatus alwayslastline "%?%h%:#%n %t @%H)%? %{= dd}%-035= %{= wB}%l %Y-%m-%d %02c:%s"
+caption always "%{=r dd}%-Lw%40L>%?%F%{+b kG}%:[%{=r dd}%? %n%f %t %?%F%{-}%:]%?%+Lw"
+
+# split line color
+sorendition "+rb .R"
