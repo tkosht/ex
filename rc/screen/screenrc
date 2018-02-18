@@ -2,6 +2,7 @@
 defencoding utf-8
 escape 
 #zombie kr
+shell $SHELL
 
 hardstatus on
 defbce on
@@ -40,6 +41,8 @@ bind -c resize_window > eval 'resize -h +1' 'command -c resize_window'
 bind -c resize_window < eval 'resize -h -1' 'command -c resize_window'
 bind -c resize_window | eval 'resize -h =' 'command -c resize_window'
 bind -c resize_window = eval 'resize -v =' 'command -c resize_window'
+
+bind R eval 'source ~/etc/screen.layout'
 
 bind w windowlist -b
 

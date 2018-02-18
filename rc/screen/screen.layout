@@ -1,0 +1,9 @@
+title edit  # for screen 0
+only
+split
+
+screen      # create screen
+select 1
+title run   # for screen 1
+focus down
+select 0
