@@ -111,7 +111,7 @@ UseMath: true
     - 連語とは何かというより深い議論はこの章の最後までおあずけ
     - コーパスにおいて、二つの間のオフセット(offset)(符号付き距離)の平均(mean)と分散(variance)を計算すること
     - ex) 5.1 の例で平均を説明
-        $$ mean = \frac{1}{4}(3 + 3 + 5 + 5) = \frac{16}{4} = 4.0 $$
+        <img src="https://latex.codecogs.com/gif.latex?mean&space;=&space;\frac{1}{4}(3&space;&plus;&space;3&space;&plus;&space;5&space;&plus;&space;5)&space;=&space;\frac{16}{4}&space;=&space;4.0">
     - この計算では、Donaldson's が、Donaldson, ', s という三つの単語に分解されるとみなしている
     - もし、door が knocked の前に出現した場合は、オフセットは負の数になる
         - ex) the door that she knocked on の場合は、オフセットは、-3
@@ -122,7 +122,6 @@ UseMath: true
         <img src="https://latex.codecogs.com/gif.latex?s&space;=&space;\sqrt{s^2}">
     - ex) 5.1 の例で標本偏差を説明
         <img src="https://latex.codecogs.com/gif.latex?s&space;=&space;\sqrt{&space;\frac{1}{3}(3-4.0)^2&space;&plus;&space;(3-4.0)^2&space;&plus;&space;(5-4.0)^2&space;&plus;&space;(5-4.0)^2&space;}&space;\approx&space;1.15">
-        $$ s = \sqrt{ \frac{1}{3}(3-4.0)^2 + (3-4.0)^2 + (5-4.0)^2 + (5-4.0)^2 } \approx 1.15 $$
 
     - 平均と標本偏差によって、コーパス中の二つの単語の距離の分布の特徴がわかる
         - 分布の特徴として、歪度(skewness/3次モーメント)、尖度(kurtosis/4次モーメント)もある
@@ -132,18 +131,18 @@ UseMath: true
     - 図5.2 一番目の図の解説
         - 分布が示す情報は、ある語とほかの語との距離の分布のピークによっても説明できる
         - 「strong」の「opposition」からの距離の分布のピーク: -1
-        - 「strong」の「opposition」に対する分散は小さい($s$ = 0.67)
+        - 「strong」の「opposition」に対する分散は小さい(<img src="https://latex.codecogs.com/gif.latex?s"> = 0.67)
         - 平均が -1.15 であるので、「strong」が通常は、-1 の位置に出現することを示している
         - -4 の位置が1回出現したという事実をノイズとして扱っている点に注意
         - サンプル数が増えたら-4 の出現数を無視できないかもしれない
     - 2つの単語の関係を見る場合、位置0 の出現数は常に0
     - 図5.2 二番目の図の解説
-        - 「support」に対する「strong」の位置の頻度分布の例 ($s$ = 1.07)
+        - 「support」に対する「strong」の位置の頻度分布の例 (<img src="https://latex.codecogs.com/gif.latex?s"> = 1.07)
         - 一番目の図と同じように分析する
     - 図5.2 三番目の図の解説
         - 「for」に対する「strong」の位置の頻度分布の例
         - 先の二つの例に比べると比較的、一様に分布している例(一様分布とは言いがたい)
-        - つまり、分散(不偏標準偏差)が大きい例($s$ = 2.15)
+        - つまり、分散(不偏標準偏差)が大きい例(<img src="https://latex.codecogs.com/gif.latex?s"> = 2.15)
     - 表5.5
         - 平均と分散による方法によって見つけられる連語の組の例
         - 真ん中の四つの例: 偏差が大きい →  二つの単語間に考慮すべき関係がないことを意味する
