@@ -1,3 +1,4 @@
+UseMath: true
 # 5章 連語
 - 連語(Collocation)とは、二つ以上の単語からなる慣用に従った物事の言い方
 - 連語とは単語を習慣的(habitual)、あるいは慣習的(customary)にどう配置するかを述べたもの
