@@ -299,14 +299,14 @@
                 - ref) https://ja.wikipedia.org/wiki/T%E6%A4%9C%E5%AE%9A
             - ベルヌーイ分布の平均と分散
 
-                $$ \mu = 3.615 \times 10^{-7} $$
-                $$ \sigma^2 = p(1 - p) \approx p = 3.615 \times 10^{-7} $$
+                <img src="https://latex.codecogs.com/gif.latex?\mu&space;=&space;3.615&space;\times&space;10^{-7}">
+                <img src="https://latex.codecogs.com/gif.latex?\sigma^2&space;=&space;p(1&space;-&space;p)&space;\approx&space;p&space;=&space;3.615&space;\times&space;10^{-7}">
 
             - ほとんどのバイグラムについて、$p$ が、小さい(ほぼ0)
         - コーパスをさらに調べることで、14,307,668個のバイグラムの中から、「new companies」が8回出現するとわかったとする
         - 標本平均を算出
 
-            $$ \bar{x} = \frac{8}{14307668} \approx 5.591 \times 10^{-7}$$
+            <img src="https://latex.codecogs.com/gif.latex?\bar{x}&space;=&space;\frac{8}{14307668}&space;\approx&space;5.591&space;\times&space;10^{-7}&space;">
 
         - t統計量を算出
 
