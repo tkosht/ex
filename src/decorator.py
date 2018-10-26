@@ -1,7 +1,15 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import re
+import datetime
 import functools
+import traceback as tb
 
+def get_now():
+    return datetime.datetime.now().strftime("%Y/%m/%d %T")
 
-def trace(f) -> callable:
+def trace(f: callable) -> callable:
     """
 
     :param f: decorated function
@@ -13,6 +21,7 @@ def trace(f) -> callable:
     >>> lg.__name__
     '<lambda>'
     """
+    assert callable(f)
 
     @functools.wraps(f)
     def tracer(*args, **kwargs) -> None:
@@ -22,63 +31,40 @@ def trace(f) -> callable:
         :param kwargs:kwargs for the function f
         :return:
         """
-        print(f"Start - {f.__name__}")
+        print(f"{get_now()} Start {f.__name__} {args}")
         # print(s)   # for raise exception
         r = f(*args, **kwargs)
-        print(f"End - {f.__name__}")
+        print(f"{get_now()} End {f.__name__} {args}")
         return r
 
     return tracer
 
+def format4logging(msg):
+    assert isinstance(msg, str)
+    m = re.sub(r"\n\s*", " ", msg)
+    return m
 
-def exept(f) -> callable:
+def exc(f: callable) -> callable:
     """
 
     :param f: decorated function
     :return: wrapper function
     """
+    assert callable(f)
 
     @functools.wraps(f)
     def exceptor(*args, **kwargs) -> None:
         try:
             f(*args, **kwargs)
         except Exception as e:
-            import traceback as tb
-            code = e.__traceback__.tb_frame.f_code
-            lineno = e.__traceback__.tb_lineno
-            print(f"Caught Exception: {e} / {e.__doc__} at {code}:{lineno}")
+            err_info = tb.format_exc(-1, chain=e)   # - just the last stack
+            #err_info = tb.format_exc(chain=e)
+            err_info = format4logging(err_info)
+            print(f"Caught Exception: {e} / {err_info}")
         return
 
     return exceptor
 
 
-@exept
-@trace
-def run(msg) -> str:
-    """
-    run function
-    :rtype: None
-    >>> run('message')
-    Start - run
-    run - message
-    End - run
-    'run - message'
-    """
-    s = f"run - {msg}"
-    print(s)
-    s += 3 / 0
-    return s
-
-
-def three() -> None:
-    """
-    three function for test the testdoc module
-    :rtype: None
-    >>> three()
-    3
-    """
-    return 3
-
-
 if __name__ == "__main__":
-    run("hello")
+    pass
